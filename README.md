@@ -2,8 +2,11 @@
 
 A hands-on digital electronics project built and demonstrated during the **ELECTROX '26** Hackathon at Bannari Amman Institute of Technology (BIT).
 
-![Working Hardware Prototype](assets/images/circuit_hero.jpg)
-*Figure: The complete 3-breadboard circuit in action — 555 Timer clock generator (top), 2-bit D Flip-Flop state memory with binary status LEDs (middle), and gate-level discrete 7-segment decoder displaying decimal "3" (bottom).*
+<p align="center">
+  <img src="circuit_hero.jpg" alt="Working Hardware Prototype" width="550" />
+  <br>
+  <em>Figure: The complete 3-breadboard circuit in action — 555 Timer clock generator (top), 2-bit D Flip-Flop state memory with binary status LEDs (middle), and gate-level discrete 7-segment decoder displaying decimal "3" (bottom).</em>
+</p>
 
 ---
 
