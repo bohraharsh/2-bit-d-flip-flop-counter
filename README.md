@@ -78,16 +78,33 @@ $$f \approx \frac{1.44}{(R_1 + 2R_2) \cdot C_1} \approx 1\text{ Hz}$$
 - Red indicator LEDs are wired to $Q_A$ and $Q_B$ via $330\,\Omega$ resistors to display the raw binary value (`00`, `01`, `10`, `11`).
 
 ### 3. Gate-Level 7-Segment Decoder
-Using Karnaugh Maps (K-maps), we derived minimal Boolean expressions for segments $a$ through $g$:
-- **Segment a**: $A + \overline{B}$ (OR gate IC 7432)
-- **Segment b**: $1$ (Tied to $V_{CC}$, always ON for 0, 1, 2, 3)
-- **Segment c**: $\overline{A} + B$ (OR gate IC 7432)
-- **Segment d**: $A + \overline{B}$ (OR gate IC 7432)
-- **Segment e**: $\overline{B}$ (NOT gate IC 7404)
-- **Segment f**: $\overline{A} \cdot \overline{B}$ (AND gate IC 7408)
-- **Segment g**: $A$ (Direct connection from $Q_A$)
+Instead of using a standard monolithic decoder IC (like 7447), our team designed the decoding logic from scratch using individual logic gates (7404 NOT, 7408 AND, 7432 OR) derived directly from **K-Maps (Karnaugh Maps)**.
 
-*For full truth tables and mathematical derivations, refer to [docs/CIRCUIT_LOGIC.md](docs/CIRCUIT_LOGIC.md).*
+---
+
+## 🗺️ Karnaugh Maps (K-Maps) & Boolean Simplification
+
+To drive the 7-segment display for decimal digits `0`, `1`, `2`, and `3`, each segment ($a$ through $g$) was solved using a 2-variable K-Map where $A$ is the MSB and $B$ is the LSB:
+
+<p align="center">
+  <img src="k_maps_reference.png" alt="K-Maps Reference Diagram" width="600" />
+  <br>
+  <em>Figure: 2-variable Karnaugh Maps with grouping loops for all segments and flip-flops.</em>
+</p>
+
+| Segment | Minterms ($\sum m$) | Grouping & Logic | Simplified Equation | Hardware Gate Used |
+|:-------:|:-------------------:|:-----------------|:-------------------:|:-------------------|
+| **$a$** | $m(0, 2, 3)$ | Row 1 ($A$) + Col 0 ($\overline{B}$) | **$a = A + \overline{B}$** | 1 OR Gate (IC 7432) |
+| **$b$** | $m(0, 1, 2, 3)$ | All 4 cells are 1 | **$b = 1$** | Tied to $+5\text{V}$ ($V_{CC}$) |
+| **$c$** | $m(0, 1, 3)$ | Row 0 ($\overline{A}$) + Col 1 ($B$) | **$c = \overline{A} + B$** | 1 OR Gate (IC 7432) |
+| **$d$** | $m(0, 2, 3)$ | Row 1 ($A$) + Col 0 ($\overline{B}$) | **$d = A + \overline{B}$** | 1 OR Gate (IC 7432) |
+| **$e$** | $m(0, 2)$ | Col 0 ($\overline{B}$) | **$e = \overline{B}$** | 1 Inverter / NOT (IC 7404) |
+| **$f$** | $m(0)$ | Single cell $m_0$ ($\overline{A}\overline{B}$) | **$f = \overline{A}\cdot\overline{B}$** | 1 AND Gate (IC 7408) |
+| **$g$** | $m(2, 3)$ | Row 1 ($A$) | **$g = A$** | Direct wire from MSB ($Q_A$) |
+| **$D_B$** | $m(0, 2)$ | LSB toggles each clock | **$D_B = \overline{B}$** | Feedback from $\overline{Q_B}$ |
+| **$D_A$** | $m(1, 2)$ | MSB toggles when $B=1$ | **$D_A = A \oplus B$** | XOR / Logic gates |
+
+👉 *For the step-by-step breakdown of each K-map grid, cell coordinates, and grouping loops, see the dedicated guide: [K_MAPS.md](K_MAPS.md).*
 
 ---
 
