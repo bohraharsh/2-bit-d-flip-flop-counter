@@ -164,13 +164,13 @@ Taking this project from theory into practical hardware was a tremendous learnin
 
 ---
 
-## 👥 Team Members (Team 4 — ELECTROX '26)
+## 👥 Team Members
 
 Developed collaboratively during the **ELECTROX '26** Hackathon at Bannari Amman Institute of Technology:
 
-- **Harsh Bohra D** (Roll No: `2026UEC1009`)
-- **Sanmathi M** (Roll No: `2026UEC1075`)
-- **Mukesh B A** (Roll No: `2026UEC1156`)
+- **Harsh Bohra D**
+- **Sanmathi M**
+- **Mukesh B A**
 
 *Department of Electronics and Communication Engineering, Bannari Amman Institute of Technology.*
 
