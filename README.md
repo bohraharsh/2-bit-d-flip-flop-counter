@@ -125,8 +125,8 @@ Taking this project from theory into practical hardware was a tremendous learnin
    - Divide the circuit into modular sections (one person on the 555 timer clock, another on the flip-flop logic, another on the 7-segment decoder).
    - Trace faults step-by-step with a multimeter and probe LEDs rather than guessing.
    - Stay patient and support each other through unexpected loose connections.
-6. **Humility & The Road Ahead**:
-   Building this circuit made me realize how much depth there is in electronics. While this 2-bit counter is a humble first step, it sparked a genuine curiosity to keep learning more about digital systems, microcontrollers, and embedded design.
+6. **Embracing Imperfection: The Real Hardware Learning Curve**:
+   During our live hackathon demonstration, we have to admit that the output sequence was not 100% correct all the time—we ran into state glitches and transition hiccups along the way. But that discrepancy between ideal theory and messy physical breadboards was where the greatest learning took place. Tracing down loose wires, observing clock sensitivities, and troubleshooting the circuit as a team taught us far more about real engineering than an experiment that worked on the very first try.
 
 ---
 
