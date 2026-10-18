@@ -144,7 +144,7 @@ Taking this project from theory into practical hardware was a tremendous learnin
 2-bit-d-flip-flop-counter/
 ├── assets/
 │   ├── images/
-│   │   └── circuit_hero.jpg             # Cropped prototype photo
+│   │   └── circuit_hero.jpg             # Cropped hardware prototype photo
 │   └── schematics/
 │       ├── 555_timer_schematic.jpg      # Astable 555 timer circuit diagram
 │       ├── counter_and_gate_connections.jpg # IC pin connection schematic
@@ -152,11 +152,27 @@ Taking this project from theory into practical hardware was a tremendous learnin
 │       └── reference_breadboard_layout.png # Organizer breadboard model
 ├── docs/
 │   ├── CIRCUIT_LOGIC.md                 # Truth tables, K-maps, & derivations
+│   ├── K_MAPS.md                        # Step-by-step Karnaugh Maps guide
 │   └── PINOUTS.md                       # Complete IC pinout reference tables
 ├── .gitignore                           # Excludes heavy video (.mp4) and temp files
+├── circuit_hero.jpg                     # Root copy for direct GitHub rendering
+├── k_maps_reference.png                 # Complete K-maps diagram
+├── K_MAPS.md                            # Dedicated K-maps derivation document
 ├── LICENSE                              # MIT License
 └── README.md                            # Main project documentation
 ```
+
+---
+
+## 👥 Team Members (Team 4 — ELECTROX '26)
+
+Developed collaboratively during the **ELECTROX '26** Hackathon at Bannari Amman Institute of Technology:
+
+- **Harsh Bohra D** (Roll No: `2026UEC1009`)
+- **Sanmathi M** (Roll No: `2026UEC1075`)
+- **Mukesh B A** (Roll No: `2026UEC1156`)
+
+*Department of Electronics and Communication Engineering, Bannari Amman Institute of Technology.*
 
 ---
 
